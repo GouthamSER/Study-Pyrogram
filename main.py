@@ -13,7 +13,8 @@ GOUTHAM = Client(
 )
 
 START_BUTTONS = [[
-  InlineKeyboardButton("group", url="https://t.me/wudixh"),
+  InlineKeyboardButton("MOVIE GROUP", url="https://t.me/wudixh"),
+  ],[
   InlineKeyboardButton("Owner", url="https://t.me/im_goutham_josh")
   ]]
 
