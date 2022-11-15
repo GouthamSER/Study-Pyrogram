@@ -19,13 +19,10 @@ START_BUTTONS = [[
 @GOUTHAM.on_message(filters.command("START"))
 async def START_cmd(client, message):
      await message.reply_text(
-          text="HELLO I AM PYROGRAM STUDY BOT \nMADE BY GOUTHAM SER"
+          text="HELLO I AM PYROGRAM STUDY BOT MADE BY GOUTHAM SER"
           reply_markup=InlineKeyboardMarkup(START_BUTTONS)
      )
      
-
-
-
 
 
 
@@ -37,8 +34,6 @@ async def start_cmd(client, message):
 async def help_cmd(client, message):
     print("HELP COMMAND")
      
-
-
 
 
 print("BOT STARTED")
