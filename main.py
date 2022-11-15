@@ -13,8 +13,9 @@ GOUTHAM = Client(
 )
 
 START_BUTTONS = [[
-     InlineKeyboardButton("JOIN UPDATES CHANNEL", url="https://t.me/wudixh")
-]]
+  InlineKeyboardButton("group", url="https://t.me/wudixh"),
+  InlineKeyboardButton("Owner", url="https://t.me/im_goutham_josh")
+  ]]
 
 @GOUTHAM.on_message(filters.command("START"))
 async def START_cmd(client, message):
