@@ -11,6 +11,18 @@ GOUTHAM = Client(
      bot_token=BOT_TOKEN
 )
 
+@GOUTHAM.on_message(filters.command("start"))
+async def start_cmd(client, message):
+    print("START COMMAND")
+
+@GOUTHAM.on_message(filters.command("help"))
+async def help_cmd(client, message):
+    print("HELP COMMAND")
+     
+
+
+
+
 print("BOT STARTED")
 
 GOUTHAM.run()
