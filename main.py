@@ -28,7 +28,12 @@ async def start_cmd(client, message):
               one_time_keyboard=True
           )
      )
-
+     
+@GOUTHAM.on_message(filters.regex("Start🥰"))
+async def start_keyboard(client, message):
+     await messege.reply_text(
+          text="START KEYBOARD"
+     )
 
      
 
