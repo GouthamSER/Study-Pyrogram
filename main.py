@@ -20,6 +20,9 @@ async def start_cmd(client, message):
           reply_markup=ReplyKeyboardMarkup(
               [[
                   "Start🥰", "HELP🙄", "ABOUT😁"
+              ],[
+                   
+                  "JOIN MY MOVIE BOT GROUP🤪"
               ]]
           )
      )
