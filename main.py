@@ -19,7 +19,7 @@ async def start_cmd(client, message):
           text="HELLO I AM PYROGRAM BOT \n MADE BY GOUTHAM SER",
           reply_markup=ReplyKeyboardMarkup(
               [[
-                  "Start🥰", "HELP🙄", "ABOUT😁"
+                  "START🥰", "HELP🙄", "ABOUT😁"
               ],[
                    
                   "JOIN MY MOVIE BOT GROUP🤪"
@@ -29,7 +29,7 @@ async def start_cmd(client, message):
           )
      )
      
-@GOUTHAM.on_message(filters.regex("Start🥰"))
+@GOUTHAM.on_message(filters.regex("START🥰"))
 async def start_keyboard(client, message):
      await messege.reply_text(
           text="START KEYBOARD"
