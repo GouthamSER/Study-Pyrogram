@@ -35,7 +35,7 @@ async def start_keyboard(client, message):
           text="HI IAM PYROGRAM STUDING BOT"
      )
 
- @GOUTHAM.on_message(filters.regex("HELP🙄"))
+@GOUTHAM.on_message(filters.regex("HELP🙄"))
 async def help_keyboard(client, message):
      await message.reply_text(
           text="NOTHING🤣🤣🤣🤣🤣🤣 IN THE HELP"
