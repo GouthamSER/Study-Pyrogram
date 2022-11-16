@@ -24,7 +24,8 @@ async def start_cmd(client, message):
                    
                   "JOIN MY MOVIE BOT GROUP🤪"
               ]],
-              resize_keyboard=True
+              resize_keyboard=True,
+              one_time_keyboard=True
           )
      )
 
