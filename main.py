@@ -31,8 +31,8 @@ async def start_cmd(client, message):
      
 @GOUTHAM.on_message(filters.regex("START🥰"))
 async def start_keyboard(client, message):
-     await messege.reply_text(
-          text="START KEYBOARD"
+     await message.reply_text(
+          text="HI IAM PYROGRAM STUDING BOT \n\n MADE WITH PYTHON LANGUAGE\n\n\nDEVELPOED BY GOUTHAM SER🤍 ❤️"
      )
 
      
