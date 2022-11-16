@@ -28,6 +28,6 @@ async def start_cmd(client, message):
      
 
 
-print("BOT STARTED")
+print("I am Pyrogram Study Bot Now I am STARTED WITH NO ERRORS😋 ")
 
 GOUTHAM.run()
