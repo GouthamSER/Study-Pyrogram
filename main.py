@@ -16,7 +16,7 @@ GOUTHAM = Client(
 @GOUTHAM.on_message(filters.command("start"))
 async def start_cmd(client, message):
      await message.reply_text(
-          text="HELLO I AM PYROGRAM BOT \n MADE BY GOUTHAM SER",
+          text="HELLO I AM PYROGRAM BOT\t DEVELPOING.......",
           reply_markup=ReplyKeyboardMarkup(
               [[
                   "START🥰", "HELP🙄", "ABOUT😁"
@@ -32,10 +32,21 @@ async def start_cmd(client, message):
 @GOUTHAM.on_message(filters.regex("START🥰"))
 async def start_keyboard(client, message):
      await message.reply_text(
-          text="HI IAM PYROGRAM STUDING BOT \n\n MADE WITH PYTHON LANGUAGE\n\n\nDEVELPOED BY GOUTHAM SER🤍 ❤️"
+          text="HI IAM PYROGRAM STUDING BOT"
      )
 
+ @GOUTHAM.on_message(filters.regex("HELP🙄"))
+async def help_keyboard(client, message):
+     await message.reply_text(
+          text="NOTHING🤣🤣🤣🤣🤣🤣 IN THE HELP"
+     )    
      
+     
+@GOUTHAM.on_message(filters.regex("ABOUT😁"))
+async def about_keyboard(client, message):
+     await message.reply_text(
+          text="ABOUT \nMADE WITH PYTHON LANGUAGE\nServer:Heroku\n\nTHIS BOT IS MADE BY GOUTHAM SER"
+     )
 
 
 print("I am Pyrogram Study Bot Now I am STARTED WITH NO ERRORS😋 ")
