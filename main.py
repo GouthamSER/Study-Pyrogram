@@ -19,7 +19,7 @@ async def start_cmd(client, message):
           text="HELLO I AM PYROGRAM BOT \n MADE BY GOUTHAM SER",
           reply_markup=ReplyKeyboardMarkup(
               [[
-                  "Start🥰"
+                  "Start🥰", "HELP🙄", "ABOUT😁"
               ]]
           )
      )
