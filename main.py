@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import ReplyKeyboardMarkup
 
 API_ID = "18979569"
 API_HASH = "45db354387b8122bdf6c1b0beef93743"
@@ -12,29 +12,19 @@ GOUTHAM = Client(
      bot_token=BOT_TOKEN
 )
 
-START_BUTTONS = [[
-  InlineKeyboardButton("MOVIE GROUP", url="https://t.me/wudixh"),
-  ],[
-  InlineKeyboardButton("Owner", url="https://t.me/im_goutham_josh")
-  ]]
-
-@GOUTHAM.on_message(filters.command("START"))
-async def START_cmd(client, message):
-     await message.reply_text(
-          text="HELLO I AM PYROGRAM STUDY BOT \n MADE BY GOUTHAM SER",
-          reply_markup=InlineKeyboardMarkup(START_BUTTONS)
-     )
-     
-
-
 
 @GOUTHAM.on_message(filters.command("start"))
 async def start_cmd(client, message):
-    print("START COMMAND")
+     await message.reply_text(
+          text="HELLO I AM PYROGRAM BOT \n MADE BY GOUTHAM SER",
+          reply_markup=ReplyKeyboardMarkup(
+              [[
+                  "Start🥰"
+              ]]
+          )
+     )
 
-@GOUTHAM.on_message(filters.command("help"))
-async def help_cmd(client, message):
-    print("HELP COMMAND")
+
      
 
 
