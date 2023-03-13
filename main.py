@@ -4,6 +4,11 @@ from pyrogram.types import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyb
 from pyrogram.types import CallbackQuery
 import random
 
+from aiohttp import web as webserver
+from webcode import bot_run
+
+PORT_CODE = environ.get("PORT", "8080")
+
 # Acoout
 API_ID = "18979569"
 API_HASH = "45db354387b8122bdf6c1b0beef93743"
@@ -15,6 +20,12 @@ BOT_TOKEN = "5816309562:AAHPAhIv-oRv1YxEL0X9a3MFQEYfuCw8wbk"
      api_hash=API_HASH,
      bot_token=BOT_TOKEN
 )
+
+        client = webserver.AppRunner(await bot_run())
+        await client.setup()
+        bind_address = "0.0.0.0"
+        await webserver.TCPSite(client, bind_address,
+        PORT_CODE).start()
 
 
 @Client.on_message(filters.command("start"))
