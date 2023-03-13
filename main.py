@@ -91,6 +91,6 @@ async def Goutham_cb(client: GOUTHAM, query: CallbackQuery):
 
 
 
-print("I AM PERFECTLY ALL RIGHT🐱‍🏍🐱‍🏍🐱‍🏍🐱‍🏍👻👻👻")
+print("I AM PERFECTLY ALL RIGHT")
 
 @Goutham.run()
