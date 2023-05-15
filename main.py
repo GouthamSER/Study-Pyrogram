@@ -33,7 +33,7 @@ ABOUT_TXT="""
 ✯ Bᴏᴛ Sᴇʀᴠᴇʀ: RAILWAY
 """
 
-@bot.on_message(filters.command & filters.group('start'))
+@bot.on_message(filters.command("start"))
 async def start(client, message):
     await message.reply_photo(
         photo="https://telegra.ph/file/88435ada3fd2a838ccd59.jpg",
@@ -41,13 +41,13 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(button)
     )
 
-@bot.on_message(filters.command & filters.group("help"))
+@bot.on_message(filters.command("help"))
 async def help(client, message):
     await message.reply_text(
         text=HELP_TXT
     )
     
-@bot.on_message(filters.command & filters.group("about"))
+@bot.on_message(filters.command("about"))
 async def help(client, message):
     await message.reply_text(
         text=ABOUT_TXT
@@ -64,7 +64,7 @@ Mention : {msg.from_user.mention}
     """
     await msg.reply_text(text=text)
     
-@bot.on_message(filters.group("idgroup"))
+@bot.on_message(filters.command("idgroup"))
 async def idgroup(client, msgs):
     text=f"""
     Title : {msgs.chat.title}
@@ -72,6 +72,7 @@ User Name : <code> @{msgs.from_user.username} </code>
 Your ID : <code> {msgs.from_user.id} </code>
 Group ID : <code> {msgs.chat.id} </code>
 """
-    
+    await msgs.reply_text(text=text)
+
 
 bot.run()
