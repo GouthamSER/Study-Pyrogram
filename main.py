@@ -71,6 +71,7 @@ async def idgroup(client, msgs):
 User Name : <code> @{msgs.from_user.username} </code>
 Your ID : <code> {msgs.from_user.id} </code>
 Group ID : <code> {msgs.chat.id} </code>
+"""
     
 
 bot.run()
