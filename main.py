@@ -8,6 +8,8 @@ bot = Client(
     bot_token = "6228122908:AAEKGwokHIjvYsH6qgthcz5G-sOdL3Aq45o"
 )
 
+print("BOT STARTED")
+
 button= [[
     InlineKeyboardButton("Owner", url=f't.me/wudixh13/4'),
     InlineKeyboardButton("Join", url=f't.me/wudixh')
