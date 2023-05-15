@@ -50,7 +50,7 @@ async def help(client, message):
     )
     
 @bot.on_message(filters.command("about"))
-async def help(client, message):
+async def about(client, message):
     await message.reply_text(
         text=ABOUT_TXT
     )
