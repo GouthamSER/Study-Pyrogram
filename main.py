@@ -10,21 +10,19 @@ bot = Client(
 
 print("BOT STARTED")
 
-button= [[
-    InlineKeyboardButton("Owner", url=f't.me/wudixh13/4'),
-    InlineKeyboardButton("Join", url=f't.me/wudixh')
-]]
-
 START_TXT = """
 HI  I am Goutham Ser Bot
-This is MAde For Studying Purpose ONly
+
+This is MAde From Pyrogram and i am studying this language
+
 All CopyRights TO Goutham Josh
  
 @im_goutham_josh
 """
 
 HELP_TXT="""
-/demo = Show Detail of Account
+This is a studiying pyrogram bot
+<u>developed by Profile Photo Ittekunavan</u>
 
 """
 
@@ -37,11 +35,50 @@ ABOUT_TXT="""
 
 @bot.on_message(filters.command("start"))
 async def start(client, message):
-    await message.reply_photo(
-        photo="https://telegra.ph/file/88435ada3fd2a838ccd59.jpg",
-        caption=START_TXT,
+    
+    button= [[
+    InlineKeyboardButton("HELP✨", callback_data="help"),
+    InlineKeyboardButton('About', callback_data="about")
+]]
+    
+    await message.reply_text(
+        text=START_TXT,
         reply_markup=InlineKeyboardMarkup(button)
     )
+
+@bot.on_callback_query()
+async def start(client, msg):
+    
+    if msg.data == "start":
+        await msg.message.edit(
+            text=START_TXT,
+            reply_markup=InlineKeyboardMarkup(
+            [[
+                InlineKeyboardButton("Help✨", callback_data="help"),
+                InlineKeyboardButton("About", callback_data="about")
+            ]]
+            )
+        )
+
+    elif msg.data == "help":
+        await msg.message.edit(
+            text=HELP_TXT,
+            reply_markup=InlineKeyboardMarkup(
+            [[
+                InlineKeyboardButton("Back", callback_data="start")
+            ]]
+            )
+        )
+    elif msg.data == "about":
+        await msg.message.edit(
+            text=ABOUT_TXT,
+            reply_markup=InlineKeyboardMarkup(
+            [[
+                InlineKeyboardButton('Back', callback_data="start")
+            ]]
+            )
+        )
+
 
 @bot.on_message(filters.command("help"))
 async def help(client, message):
@@ -54,27 +91,16 @@ async def about(client, message):
     await message.reply_text(
         text=ABOUT_TXT
     )
-
-@bot.on_message(filters.command("idpm"))
-async def idpm(client, msg):
-    text=f"""
-    First Name : {msg.from_user.first_name}
-Last Name : {msg.from_user.last_name}
-User Name : <code> {msg.from_user.username} </code>
-ID : <code> {msg.from_user.id} </code>
-Mention : {msg.from_user.mention}
-    """
-    await msg.reply_text(text=text)
     
-@bot.on_message(filters.command("idgroup"))
-async def idgroup(client, msgs):
+@bot.on_message(filters.command("id"))
+async def idgroup(client, msg):
     text=f"""
-    Title : {msgs.chat.title}
-User Name : <code> @{msgs.from_user.username} </code>
-Your ID : <code> {msgs.from_user.id} </code>
-Group ID : <code> {msgs.chat.id} </code>
+    Title : {msg.chat.title}
+User Name : <code> @{msg.from_user.username} </code>
+Your ID : <code> {msg.from_user.id} </code>
+Group ID : <code> {msg.chat.id} </code>
 """
-    await msgs.reply_text(text=text)
+    await msg.reply_text(text=text)
 
 
 bot.run()
