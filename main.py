@@ -1,5 +1,8 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+import datetime
+
+    
 
 bot = Client(
     name = "Pyrogram Studiyng",
@@ -10,7 +13,7 @@ bot = Client(
 
 print("BOT STARTED")
 
-START_TXT = """
+START_TXT = """{}
 HI  I am Goutham Ser Bot
 
 This is MAde From Pyrogram and i am studying this language
@@ -41,8 +44,18 @@ async def start(client, message):
     InlineKeyboardButton('About', callback_data="about")
 ]]
     
+    
+    m=datetime.datetime.now()
+    time=m.hour
+    if time < 12:
+        get="GoodMorning"
+    elif time <16:
+        get="Good Evening"
+    else:
+        get="Good Night"
+    
     await message.reply_text(
-        text=START_TXT,
+        text=START_TXT.format(get,  message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(button)
     )
 
