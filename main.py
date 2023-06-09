@@ -42,8 +42,10 @@ async def start(client, message):
     button= [[
     InlineKeyboardButton("HELP✨", callback_data="help"),
     InlineKeyboardButton('About', callback_data="about")
-]]
-    
+]]        
+        m=await message.reply_sticker("CAACAgUAAxkBAAIuc2OxMvp4oKa3eqg6zBTCZZdtxFV3AAIvAAPhAAEBGxa4Kik7WjyMHgQ")
+        await asyncio.sleep(1)
+        await m.delete()
     
     m=datetime.datetime.now()
     time=m.hour
@@ -64,7 +66,7 @@ async def start(client, msg):
     
     if msg.data == "start":
         await msg.message.edit(
-            text=START_TXT,
+            text=START_TXT.format(get,  message.from_user.mention),
             reply_markup=InlineKeyboardMarkup(
             [[
                 InlineKeyboardButton("Help✨", callback_data="help"),
