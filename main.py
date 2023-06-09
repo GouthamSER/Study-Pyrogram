@@ -13,7 +13,7 @@ bot = Client(
 
 print("BOT STARTED")
 
-START_TXT = """{}
+START_TXT = """{} {}
 HI  I am Goutham Ser Bot
 
 This is MAde From Pyrogram and i am studying this language
