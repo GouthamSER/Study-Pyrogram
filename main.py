@@ -43,10 +43,6 @@ async def start(client, message):
     InlineKeyboardButton("HELP✨", callback_data="help"),
     InlineKeyboardButton('About', callback_data="about")
 ]]        
-        m=await message.reply_sticker("CAACAgUAAxkBAAIuc2OxMvp4oKa3eqg6zBTCZZdtxFV3AAIvAAPhAAEBGxa4Kik7WjyMHgQ")
-        await asyncio.sleep(1)
-        await m.delete()
-    
     m=datetime.datetime.now()
     time=m.hour
     if time < 12:
